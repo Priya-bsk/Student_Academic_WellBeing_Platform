@@ -1,7 +1,7 @@
 #  AI-Powered Student Academic & Well-Being Platform
 
 An integrated AI-driven web application that unifies academic tracking, productivity management, and mental-health monitoring for students, with real-time counselor interaction and intelligent insights powered by Hugging Face NLP models.
-
+Visit: http://student-academic-well-being-platfor.vercel.app/
 ---
 
 ## 🚀 Project Highlights
@@ -73,4 +73,5 @@ An integrated AI-driven web application that unifies academic tracking, producti
 - Institution-level analytics dashboard
 
 ---
+
 
