@@ -1,0 +1,173 @@
+/* FloatingStudentChat.css */
+
+/* 🌐 Overall Container */
+.floating-chat-container {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-family: 'Inter', 'Poppins', sans-serif;
+}
+
+/* 💬 Floating Button */
+.chat-button {
+  background: linear-gradient(135deg, #6c63ff, #8a7eff);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  cursor: pointer;
+  font-size: 22px;
+  box-shadow: 0 8px 20px rgba(108, 99, 255, 0.4);
+  transition: all 0.3s ease;
+}
+
+.chat-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(108, 99, 255, 0.5);
+}
+
+/* 💭 Chat Popup Box */
+.chat-popup {
+  width: 340px;
+  height: 450px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* 🧠 Chat Header */
+.chat-header {
+  background: linear-gradient(135deg, #6c63ff, #8a7eff);
+  color: white;
+  padding: 12px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.3px;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.close-btn:hover {
+  transform: scale(1.2);
+}
+
+/* 🧾 Message Area */
+.chat-messages {
+  flex: 1;
+  padding: 12px;
+  overflow-y: auto;
+  background: rgba(249, 249, 255, 0.7);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  scroll-behavior: smooth;
+}
+
+/* 🗨️ Message Bubbles */
+.message {
+  padding: 10px 14px;
+  border-radius: 16px;
+  line-height: 1.4;
+  max-width: 80%;
+  font-size: 14px;
+  animation: popIn 0.2s ease-in-out;
+  word-wrap: break-word;
+}
+
+.message.user {
+  background: linear-gradient(135deg, #6c63ff, #8a7eff);
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 4px;
+}
+
+.message.bot {
+  background: #f1f0f7;
+  color: #222;
+  align-self: flex-start;
+  border-bottom-left-radius: 4px;
+}
+
+/* ✏️ Input Area */
+.chat-input-area {
+  display: flex;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+}
+
+.chat-input-area input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+  color: #222;
+}
+
+.chat-input-area button {
+  padding: 10px 16px;
+  border: none;
+  background: linear-gradient(135deg, #6c63ff, #8a7eff);
+  color: white;
+  border-radius: 0 12px 12px 0;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.chat-input-area button:hover {
+  background: linear-gradient(135deg, #7a70ff, #9b8cff);
+}
+
+/* 🔹 Scrollbar Styling */
+.chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+.chat-messages::-webkit-scrollbar-thumb {
+  background: rgba(108, 99, 255, 0.5);
+  border-radius: 6px;
+}
+.message.bot {
+  white-space: pre-wrap;
+  line-height: 1.6;
+}
+
+.message.bot br + • {
+  display: block;
+  margin-top: 6px;
+}
+
+
+/* ✨ Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}

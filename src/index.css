@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Chrome, Edge */
+input::-ms-reveal,
+input::-ms-clear {
+  display: none;
+}
+
+/* Safari iOS */
+input::-webkit-textfield-decoration-container {
+  display: none;
+}
